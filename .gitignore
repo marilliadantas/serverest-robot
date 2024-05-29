@@ -1,0 +1,6 @@
+*.pyc
+*logs/
+*__pycache__/
+.vscode
+*.zip
+*.7z
