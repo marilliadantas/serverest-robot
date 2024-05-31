@@ -1,10 +1,10 @@
 *** Settings ***
 Documentation    Este é o gerenciador de dependências da automação
 
-Library             FakerLibrary
-Library             RequestsLibrary
-Library             Collections
-Library             String
+Library      FakerLibrary
+Library      RequestsLibrary
+Library      Collections
+Library      String
 
 Resource     services.robot
 Resource     utils.robot
