@@ -11,9 +11,9 @@ permissions:
   contents: read
 
 jobs:
-  test_web:
-    name: Web Tests
-    runs-on: ubuntu-latest
+    test_api:
+        name: API Tests
+        runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
@@ -21,11 +21,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install setuptools
-          pip install robotframework==6.1.1
-          pip install robotframework-seleniumlibrary==6.2.0
-          pip install robotframework-faker
-          pip install allure-robotframework
+            pip install robotframework
+            pip install robotframework-requests
+            pip install allure-robotframework
 
       - name: Install Allure CLI
         run: |
