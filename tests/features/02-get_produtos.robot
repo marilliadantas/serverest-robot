@@ -9,11 +9,11 @@ Buscar produtos com sucesso
     E exibir uma lista de produtos
 
 Buscar produto por ID
-    Quando realizar a requisição GET pelo id
+    Quando realizar a requisição GET pelo id  BeeJh5lz3k6kSIzA
     Então a API retorna o status code   200
     E exibir as informações no body
 
 Buscar produto por ID inválido
-    Quando realizar a requisição GET pelo id inválido
+    Quando realizar a requisição GET pelo id  BeeJh5lz3k6kSIzB
     Então a API retorna o status code   400
     E exibir a mensagem                 Produto não encontrado

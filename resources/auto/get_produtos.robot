@@ -10,14 +10,10 @@ Quando realizar a requisição GET
 Quando realizar a requisição GET pelo id
     # Set Test Variable                ${id}                        ${RESPOSTA.json()}[produtos][0][_id]
     # Log                              ${id}
-    ${RESPOSTA}       Get Id In     /produtos                       BeeJh5lz3k6kSIzA
-    Log                             ${RESPOSTA}
+    [Arguments]       ${id}
+    ${RESPOSTA}       Get Id In     /produtos                       ${id}
     Set Test Variable               ${RESPOSTA}
-
-Quando realizar a requisição GET pelo id inválido
-    ${RESPOSTA}       Get Id In     /produtos                       BeeJh5lz3k6kSIzB
     Log                             ${RESPOSTA}
-    Set Test Variable               ${RESPOSTA}
 
 E exibir as informações no body
     Should Be Equal As Strings    ${RESPOSTA.json()["nome"]}        Logitech MX Vertical

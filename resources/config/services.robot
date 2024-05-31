@@ -33,5 +33,6 @@ Get Id In
     [Arguments]         ${endpoint}    ${id}
     ${response}         GET            ${BASE_URL}${endpoint}/${id}
     ...                 headers=${HEADERS_LOGIN}
+    ...                 expected_status=any
     
     RETURN              ${response}
