@@ -46,6 +46,7 @@ robot -d logs --listener allure_robotframework tests/features
 ```bash
 allure serve output/allure
 ```
+
 ## Arquitetura
 ```
 .
