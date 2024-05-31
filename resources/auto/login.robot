@@ -2,7 +2,7 @@
 Resource    ../../resources/config/package.robot
 
 *** Keywords ***
-Quando inserir email e senha válidos
+Quando inserir email e senha
     ${RESPOSTA}    Post in    /login        ${BODY_LOGIN}
     ${token}       Convert To String        ${RESPOSTA.json()}[authorization]
     Set Global Variable                     ${token}

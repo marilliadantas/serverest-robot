@@ -7,6 +7,8 @@ Library      Collections
 Library      String
 
 Resource     services.robot
+Resource     ../data/produtos.robot
 Resource     utils.robot
 Resource    ../auto/login.robot
 Resource    ../auto/get_produtos.robot
+Resource    ../auto/post_produtos.robot

@@ -36,3 +36,21 @@ Get Id In
     ...                 expected_status=any
     
     RETURN              ${response}
+
+Post Cadastrar
+    [Arguments]         ${endpoint}   ${headers}    ${body}
+    ${response}         POST          ${BASE_URL}${endpoint} 
+    ...                 json=${body}   
+    ...                 headers=${headers}
+    ...                 expected_status=any
+    
+    RETURN            ${response}
+
+Login
+    Conectar a API    /login
+    Quando inserir email e senha
+
+HeadersAuth
+    [Arguments]             ${token} 
+    ${headersAuth}          Create Dictionary    Authorization=${token}
+    Set Test Variable       ${headersAuth}

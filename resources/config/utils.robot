@@ -7,6 +7,7 @@ ${FakeEmail}
 ${FakeSenha}
 ${FakerDescricao}
 ${FakerValor}
+${palavra_randomica}
 
 *** Keywords ***
 Fakers
@@ -31,3 +32,9 @@ Fakers
 #FakerValor
     ${FakerValor}=           FakerLibrary.Numerify    ###
     Set Test Variable        ${FakerValor}
+
+
+Palavra randomica
+    ${palavra_randomica}    Generate Random String    length=8    chars=[LETTERS]
+    ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
+    Set Test Variable       ${palavra_randomica}           
