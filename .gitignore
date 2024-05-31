@@ -4,4 +4,4 @@
 .vscode
 *.zip
 *.7z
-output/
+*output/
