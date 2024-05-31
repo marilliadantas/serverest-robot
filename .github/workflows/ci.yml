@@ -51,7 +51,7 @@ jobs:
         if: always()
         with:
           name: robot-framework-report-api
-          path: allure-report
+          path: allure-report/
 
   deploy:
     name: Deploy GitHub Pages 🌐

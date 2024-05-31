@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri May 31 09:17:57 BRT 2024","Fri May 31 09:17:57 BRT 2024","759","","Features","02-Get Produtos","","","Buscar produto por ID inválido",""
-"passed","Fri May 31 09:17:54 BRT 2024","Fri May 31 09:17:55 BRT 2024","759","","Features","01-Login","","","Login",""
-"passed","Fri May 31 09:17:56 BRT 2024","Fri May 31 09:17:57 BRT 2024","770","","Features","02-Get Produtos","","","Buscar produto por ID",""
-"passed","Fri May 31 09:17:55 BRT 2024","Fri May 31 09:17:56 BRT 2024","880","","Features","02-Get Produtos","","","Buscar produtos com sucesso",""
