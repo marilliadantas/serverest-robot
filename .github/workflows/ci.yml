@@ -41,13 +41,17 @@ jobs:
         run: |
           echo Executando os testes de API do Robot
           robot -d logs --listener allure_robotframework tests/features || true
+
+      - name: Generate report
+        run: |
+            allure generate allure-report/
     
       - name: Test Report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: robot-framework-report-api
-          path: output/allure
+          path: allure-report
 
   deploy:
     name: Deploy GitHub Pages 🌐
