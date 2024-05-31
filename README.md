@@ -27,30 +27,52 @@ Você pode instalar o Robot Framework e as bibliotecas necessárias executando o
 pip install robotframework
 pip install robotframework-requests
 pip install robotframework-seleniumlibrary
+pip install allure-robotframework==2.13.5
 ```
 
 ## Executando os Testes
 Execute os testes com o seguinte comando, substituindo `nome_do_arquivo.robot` pelo nome do arquivo que contém seus casos de teste:
 
 ```bash
-robot nome_do_arquivo.robot
+robot -d logs tests/features
+```
+
+## Executando os Testes com Allure Report
+```bash
+robot -d logs --listener allure_robotframework tests/features
+```
+
+## Gerando o report
+```bash
+allure serve output/allure
 ```
 ## Arquitetura
 ```
 .
 ├── readme.md
 ├── resources
-│   └── serverest_testes.resource
-├── results
-│   ├── logs
-│       ├── log.html
-│       └── output.xml
-│       └── report.xml
-└── tests
+│   ├── auto
+│   │   ├── get_produtos.robot
+│   │   └── login.robot
+│   └── config
+│       ├── package.robot
+│       ├── services.robot
+│       └── utils.robot
+├── logs
+│   ├── log.html
+│   ├── output.xml
+│   └── report.xml
+└── testes
+    ├── features
+    │   ├── 01-login.robot
+    │   └── 02-get_produtos.robot
     ├── delete_serverest_test.robot
-    └── get_serverest_test.robot
-    └── post_serverest_test.robot
+    ├── get_serverest_test.robot
+    ├── post_serverest_test.robot
     └── put_serverest_test.robot
+└── .github
+    └── workflows
+        └── ci.yml
 
 ```
 
