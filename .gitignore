@@ -5,4 +5,4 @@
 *.zip
 *.7z
 *output/
-*allure-report/
+allure-report
