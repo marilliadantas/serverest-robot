@@ -2,3 +2,4 @@ robotframework==6.1.1
 robotframework-requests
 robotframework-faker 
 allure-robotframework==2.13.5
+setuptools
