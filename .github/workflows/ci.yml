@@ -24,9 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           echo Instalação das depedências do Projeto
-          pip install robotframework
-          pip install allure-robotframework==2.13.5
-          pip install robotframework-requests
+          pip install -r requirements.txt
 
       - name: Install Allure CLI
         run: |
