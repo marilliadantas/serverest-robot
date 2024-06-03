@@ -24,10 +24,7 @@ Este projeto tem como objetivo realizar testes de API utilizando o Serve Rest co
 Você pode instalar o Robot Framework e as bibliotecas necessárias executando os seguintes comandos no terminal ou prompt de comando:
 
 ```bash
-pip install robotframework
-pip install robotframework-requests
-pip install robotframework-seleniumlibrary
-pip install allure-robotframework==2.13.5
+pip install -r requirements.txt
 ```
 
 ## Executando os Testes
