@@ -1,3 +1,3 @@
-pip install robotframework
-pip install allure-robotframework==2.13.5
-pip install robotframework-requests
+robotframework
+allure-robotframework==2.13.5
+robotframework-requests
