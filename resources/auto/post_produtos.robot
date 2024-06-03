@@ -15,11 +15,14 @@ Quando inserir os dados do produto
 Então a API exibe o status
     [Arguments]                       ${statusCode}
     Should Be Equal As Strings        ${RESPOSTA.status_code}        ${statusCode}
+    Log                               ${RESPOSTA.status_code}
 
 E mostrará a mensagem
     [Arguments]     ${mensagem}
     Should Be Equal As Strings        ${RESPOSTA.json()}[message]             ${mensagem}
+    Log                               ${RESPOSTA.json()}[message]
 
 E verificar a mensagem de validação do campo
     [Arguments]                       ${campo}                                ${mensagem}
     Should Be Equal As Strings        ${RESPOSTA.json()}[${campo}]            ${mensagem}
+    Log                               ${RESPOSTA.json()}[${campo}]

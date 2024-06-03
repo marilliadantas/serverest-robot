@@ -14,7 +14,9 @@ Quando inserir email e senha
 Então a API deve retornar o status code
     [Arguments]                             ${statusCode}
     Should Be Equal As Strings              ${RESPOSTA.status_code}       ${statusCode}
+    Log                                     ${RESPOSTA.status_code}
 
 E exibir a mensagem
     [Arguments]                             ${mensagem}
     Should Be Equal                         ${RESPOSTA.json()}[message]    ${mensagem}
+    Log                                     ${RESPOSTA.json()}[message]

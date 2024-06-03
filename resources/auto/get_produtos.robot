@@ -25,6 +25,8 @@ E exibir as informações no body
 Então a API retorna o status code
     [Arguments]    ${statusCode}
     Should Be Equal As Strings       ${RESPOSTA.status_code}        ${statusCode}
+    Log                              ${RESPOSTA.status_code}
 
 E exibir uma lista de produtos  
     Should Not Be Empty              ${RESPOSTA.json()}
+    Log                              ${RESPOSTA.json()}    
