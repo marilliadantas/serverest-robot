@@ -1,9 +1,24 @@
 *** Settings ***
 Resource            ../../resources/config/package.robot
-Suite Setup      Conectar a API    /login
+Suite Setup         Conectar a API    /login
 
 *** Test Cases ***
 Login - Sucesso
-    Quando inserir email e senha                
+    Quando inserir email e senha                beltrano@qa.com.br    teste
     Então a API deve retornar o status code     200
     E exibir a mensagem                         Login realizado com sucesso
+
+Login - E-mail inválido
+    Quando inserir email e senha                teste1@qa.com    teste
+    Então a API deve retornar o status code     401
+    E exibir a mensagem                         Email e/ou senha inválidos
+
+Login - Senha inválida
+    Quando inserir email e senha                beltrano@qa.com.br    senhaInvalida
+    Então a API deve retornar o status code     401
+    E exibir a mensagem                         Email e/ou senha inválidos
+
+Login - E-mail e senha inválidos    
+    Quando inserir email e senha                teste1@qa.com    senhaInvalida
+    Então a API deve retornar o status code     401
+    E exibir a mensagem                         Email e/ou senha inválidos

@@ -27,4 +27,4 @@ Então a API retorna o status code
     Should Be Equal As Strings       ${RESPOSTA.status_code}        ${statusCode}
 
 E exibir uma lista de produtos  
-    Should Not Be Empty      ${RESPOSTA.json()}
+    Should Not Be Empty              ${RESPOSTA.json()}

@@ -3,8 +3,8 @@ Resource    ../../resources/config/package.robot
 
 *** Keywords ***
 Quando inserir os dados do produto
-    [Arguments]       ${token}            ${nomeProduto}         ${precoProduto}           ${descricaoProduto}               ${quantidadeProduto}
-    ${bodyPostProd}   Criar produtos      nome=${nomeProduto}    preco=${precoProduto}     descricao=${descricaoProduto}     quantidade=${quantidadeProduto}
+    [Arguments]       ${nomeProduto}         ${precoProduto}           ${descricaoProduto}               ${quantidadeProduto}
+    ${bodyPostProd}   Criar produtos         nome=${nomeProduto}       preco=${precoProduto}             descricao=${descricaoProduto}     quantidade=${quantidadeProduto}
     Log               ${bodyPostProd}
 
     HeadersAuth                        ${token}

@@ -2,12 +2,10 @@
 Resource            ./package.robot
 
 *** Variables ***
-${TOKEN}
+${token}
 ${BASE_URL}         https://serverest.dev
 &{HEADERS_LOGIN}    accept=application/json
 ...                 Content-Type=application/json
-&{BODY_LOGIN}       email=beltrano@qa.com.br
-...                 password=teste
 
 *** Keywords ***
 Conectar a API
@@ -19,6 +17,7 @@ Post in
     ${response}         POST          ${BASE_URL}${endpoint} 
     ...                 json=${body}    
     ...                 headers=${HEADERS_LOGIN}
+    ...                 expected_status=any
     
     RETURN              ${response}
 
@@ -44,11 +43,13 @@ Post Cadastrar
     ...                 headers=${headers}
     ...                 expected_status=any
     
-    RETURN            ${response}
+    RETURN             ${response}
 
 Login
     Conectar a API    /login
-    Quando inserir email e senha
+    Quando inserir email e senha    beltrano@qa.com.br    teste
+    ${token}            Convert To String        ${RESPOSTA.json()}[authorization]
+    Set Global Variable                          ${token}
 
 HeadersAuth
     [Arguments]             ${token} 

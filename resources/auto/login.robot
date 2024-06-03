@@ -1,11 +1,14 @@
 *** Settings ***
 Resource    ../../resources/config/package.robot
+Resource    ../data/login.robot
 
 *** Keywords ***
 Quando inserir email e senha
-    ${RESPOSTA}    Post in    /login        ${BODY_LOGIN}
-    ${token}       Convert To String        ${RESPOSTA.json()}[authorization]
-    Set Global Variable                     ${token}
+    [Arguments]                        ${email}           ${password}
+    ${bodyLogin}      Fazer login     email=${email}     password=${password}
+    Log      ${bodyLogin}
+
+    ${RESPOSTA}    Post in    /login        ${bodyLogin}
     Set Global Variable                     ${RESPOSTA}
 
 Então a API deve retornar o status code
