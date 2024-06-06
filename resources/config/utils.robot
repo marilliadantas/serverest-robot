@@ -8,6 +8,7 @@ ${FakeSenha}
 ${FakerDescricao}
 ${FakerValor}
 ${palavra_randomica}
+${EMAIL_TEST}
 
 *** Keywords ***
 Fakers
@@ -38,3 +39,9 @@ Palavra randomica
     ${palavra_randomica}    Generate Random String    length=8    chars=[LETTERS]
     ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
     Set Test Variable       ${palavra_randomica}           
+
+Criar email
+    ${palavra_randomica}    Generate Random String    length=8    chars=[LETTERS]
+    ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
+    Set Test Variable       ${EMAIL_TEST}             ${palavra_randomica}@teste.com.br
+    Log                     ${EMAIL_TEST}

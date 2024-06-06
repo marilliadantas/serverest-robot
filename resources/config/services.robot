@@ -45,6 +45,14 @@ Post Cadastrar
     
     RETURN             ${response}
 
+Delete Id In
+    [Arguments]         ${endpoint}    ${id}
+    ${response}         DELETE         ${BASE_URL}${endpoint}/${id}
+    ...                 headers=${HEADERS_LOGIN}
+    ...                 expected_status=any
+    
+    RETURN              ${response}
+
 Login
     Conectar a API    /login
     Quando inserir email e senha    beltrano@qa.com.br    teste

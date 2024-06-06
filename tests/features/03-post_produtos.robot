@@ -14,12 +14,32 @@ Cadastrar produto - Duplicado
     Então a API exibe o status                       400
     E mostrará a mensagem                            Já existe produto com esse nome
 
+Cadastrar produto - Campo preço com letras
+    Quando inserir os dados do produto               nome   abc    Test   100
+    Então a API exibe o status                       400
+    E verificar a mensagem de validação do campo     preco   preco deve ser um número
+
+Cadastrar produto - Campo quantidade com letras
+    Quando inserir os dados do produto               nome   1000    Test   abc
+    Então a API exibe o status                       400
+    E verificar a mensagem de validação do campo     quantidade    quantidade deve ser um número
+
 Cadastrar produto - Campo nome vazio
-    Quando inserir os dados do produto               ${EMPTY}   1313    Test   100
+    Quando inserir os dados do produto               None   1313    Test   100
     Então a API retorna o status code                400
-    E verificar a mensagem de validação do campo     nome    nome não pode ficar em branco
+    E verificar a mensagem de validação do campo     nome    nome é obrigatório
 
 Cadastrar produto - Campo descricao vazio
-    Quando inserir os dados do produto               nome   preco    ${EMPTY}   quantidade
+    Quando inserir os dados do produto               nome   preco   ${EMPTY}   quantidade
     Então a API exibe o status                       400
     E verificar a mensagem de validação do campo     descricao    descricao não pode ficar em branco
+
+Cadastrar produto - Campo preço vazio
+    Quando inserir os dados do produto               nome     None    descricao    quantidade 
+    Então a API exibe o status                       400  
+    E verificar a mensagem de validação do campo     preco    preco é obrigatório
+
+Cadastrar produto - Campo quantidade vazio
+    Quando inserir os dados do produto               nome     None    descricao    quantidade 
+    Então a API exibe o status                       400  
+    E verificar a mensagem de validação do campo     quantidade    quantidade deve ser um número
