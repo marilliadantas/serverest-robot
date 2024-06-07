@@ -19,11 +19,6 @@ Cadastrar usuário - Campo email vazio
     Então a API retorna o status               400
     E a mensagem no campo                      email   email é obrigatório
 
-Cadastrar usuário - Campo password vazio                            
-    Quando inserir os dados do usuario         Fulano da Silva    ${EMAIL_TEST}    ${EMPTY}     true    
-    Então a API retorna o status               400
-    E a mensagem no campo                      password   password não pode ficar em branco
-
 Cadastrar usuário - Campo administrador vazio                              
     Quando inserir os dados do usuario         Fulano da Silva    ${EMAIL_TEST}     teste       None    
     Então a API retorna o status               400

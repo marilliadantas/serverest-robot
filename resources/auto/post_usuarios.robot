@@ -10,10 +10,7 @@ Quando inserir os dados do usuario
     HeadersAuth         ${token}
     ${RESPOSTA}         Post Cadastrar     /usuarios        ${headersAuth}           ${bodyPostUser}
     Set Test Variable                      ${RESPOSTA}
-    Log                                    ${RESPOSTA.json()}
-
-    # Set Test Variable    ${ID_USUARIO}     ${RESPOSTA.json()["_id"]}
-    # Log                                    ${RESPOSTA.json()["_id"]}           
+    Log                                    ${RESPOSTA.json()}    
 
 Então a API retorna o status
     [Arguments]                       ${statusCode}
