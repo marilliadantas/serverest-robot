@@ -26,4 +26,3 @@ Cadastrar usuario
 
 Excluir usuario
     Delete Id In      /usuarios     ${ID_USUARIO}
-    Log                             ${RESPOSTA.json()}[message]
